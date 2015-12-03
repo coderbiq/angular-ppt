@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-cloak>
+	<head>
+		<title>AngularJs分享</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+		<link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap-theme.css">
+		<link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.css">
+		<link rel="stylesheet" href="./bower_components/angular-slidedeck/angular-slidedeck.css">
+		<link rel="stylesheet" href="./node_modules/codemirror/lib/codemirror.css">
+		<link rel="stylesheet" href="./node_modules/codemirror/theme/twilight.css">
+		<link rel="stylesheet" href="./style.css">
+		<link rel="stylesheet" href="./nga.all.min.css">
+		<style>
+		.CodeMirror {
+			height: 100%
+		}
+		</style>
+	</head>
+	<body ng-controller="mainCtrl">
+
+		<div class="text-center" ng-if="!play">
+			<button class="btn btn-primary btn-lg" ng-click="begin()">开始</button>
+		</div>
+
+		<slides ng-if="play">
+
+			<slide class="nga-default nga-stagger nga-fade slide-full-img" style="background-image: url('./image/AngularJS.jpg')"></slide>
+
+			<slide class="nga-default nga-stagger nga-fade">
+				<h1>AngularJS是什么？</h1>
+				<p>由Google维护的一款开源JavaScript开发框架。用于扩展、增强HTML功能,它专为构建强大的WEB应用而设计。</p>
+
+				<div class="row">
+					<div class="col-sm-4 col-sm-offset-1">
+						<div class="thumbnail">
+							<img src="./image/angularjs.png" style="height: 200px;">
+							<p>使开发和测试变得更加容易</p>
+						</div>
+					</div>
+					<div class="col-sm-1 text-primary">
+						<i class="fa fa-cogs fa-5x"></i>
+					</div>
+					<div class="col-sm-4 col-sm-offset-1">
+						<div class="thumbnail">
+							<img src="./image/jquery.png">
+							<p>为了简化DOM操作以及浏览器兼容性而生</p>
+						</div>
+					</div>
+				</div>
+			</slide>
+
+			<slide class="nga-default nga-stagger nga-fade">
+				<h1>适用于哪些场景</h1>
+				<p>重交互、轻内容并且不用考虑较老版本浏览器兼容的任何场景！</p>
+				<div class="row text-center">
+					<div class="col-sm-3">
+						<i class="fa fa-internet-explorer fa-5x text-info"></i><br />
+						网页应用
+					</div>
+					<div class="col-sm-3">
+						<i class="fa fa-wechat fa-5x text-info"></i><br />
+						微信应用
+					</div>
+					<div class="col-sm-3">
+						<i class="fa fa-mobile-phone fa-5x text-info"></i><br />
+						移动应用
+					</div>
+					<div class="col-sm-3">
+						<i class="fa fa-windows fa-5x text-info"></i><br />
+						桌面应用
+					</div>
+					<div class="col-sm-3">
+						<i class="fa fa-chrome fa-5x text-info"></i><br />
+						浏览器插件
+					</div>
+					<div class="col-sm-3">
+						<i class="fa fa-ellipsis-h fa-5x text-info"></i><br />
+						更多
+					</div>
+				</div>
+			</slide>
+
+			<slide class="nga-default nga-stagger nga-fade">
+				<h1>为什么选择AngularJS</h1>
+				<ol>
+					<li>模块化、依赖注入、MVC等一系列特性让大型Web项目的开发、测试变的更加容易！</li>
+					<li>由Google提供支持，具有活跃的社区:
+						<i class="fa fa-code-fork text-info"></i> 2W+,
+						<i class="fa fa-star text-info"></i> 4W+,
+						<i class="fa fa-twitter text-info"></i> 10W+
+						不用但心后续支持问题
+					</li>
+					<li>完善的生态系统。官方除了框架外还提供一些扩展模块，其他第三方提供的扩展模块更多！</li>
+				</ol>
+			</slide>
+
+			<slide class="nga-default nga-stagger nga-fade">
+				<h1>
+					<img src="./image/angularui.png" style="height:90px;">
+					Angular UI
+				</h1>
+				<div class="row">
+					<div class="col-sm-4">
+						<qr text="'http://angular-ui.github.io/'"></qr>
+					</div>
+					<div class="col-sm-8">
+						<div class="list-group">
+							<div class="list-group-item">
+								<h3 class="list-group-item-heading">UI Bootstrap
+									<small>Bootstrap components written in pure AngularJS</small>
+								</h3>
+							</div>
+							<div class="list-group-item">
+								<h3 class="list-group-item-heading">UI Router
+									<small>The de-facto solution to flexible routing with nested views in AngularJS</small>
+								</h3>
+							</div>
+							<div class="list-group-item">
+								<h3 class="list-group-item-heading">UI Grid
+									<small>Grid virtualization written natively in AngularJS</small>
+								</h3>
+							</div>
+							<div class="list-group-item">
+								<h3 class="list-group-item-heading">More
+									<small>26+ modules</small>
+								</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+			</slide>
+
+			<slide class="nga-default nga-stagger nga-fade">
+				<h1>
+					<img src="./image/ionic.png" style="height: 90px">
+					<small>hybrid mobile apps framework.</small>
+				</h1>
+				<div class="col-sm-4">
+					<qr text="'http://ionicframework.com/'"></qr>
+				</div>
+				<div class="col-sm-8">
+					<img src="./image/coride-app-preview.png" style="width: 100%">
+				</div>
+			</slide>
+
+			<slide class="nga-default nga-stagger nga-fade">
+				<h1>
+					<img src="./image/mobileAngularUi.png" style="height: 90px;">
+					Mobile Angular UI
+				</h1>
+				<div class="col-sm-4">
+					<qr text="'http://mobileangularui.com/'"></qr>
+				</div>
+				<div class="col-sm-8">
+					<img src="./image/mobile-angular-ui-phone.png" style="width: 100%">
+				</div>
+			</slide>
+
+			<slide class="nga-default nga-stagger nga-fade">
+				<h1>一个AngularJS示例</h1>
+				<div class="text-left" ng-controller="demoCtrl">
+					<form class="form form-inline" ng-submit="add()">
+						<div class="form-group">
+							<select class="form-control" ng-options="color for color in colorOptions" ng-model="newTask.color"></select>
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" ng-model="newTask.content">
+						</div>
+						<button type="submit" class="btn btn-danger" ng-disabled="newTask.content.length < 5">
+							<i class="fa fa-plus"></i>
+							创建任务
+						</button>
+					</form>
+
+					<h3>待办任务列表：</h3>
+					<ul class="list-group">
+						<li
+							class="list-group-item nga-default nga-stagger nga-slide-right"
+							ng-class="{
+								'success' :'list-group-item-success',
+								'info'    : 'list-group-item-info',
+								'warning' : 'list-group-item-warning',
+								'danger'  : 'list-group-item-danger'
+								}[task.color]"
+							ng-repeat="task in tasks | filter:{isClose:false}">
+								<label>
+									<input type="checkbox" ng-model="task.isClose">
+									{{task.content}}
+								</label>
+						</li>
+					</ul>
+				</div>
+			</slide>
+
+			<slide class="nga-default nga-stagger nga-fade text-left">
+				<textarea ui-codemirror="editorOptions">
+<div class="text-left" ng-controller="demoCtrl">
+	<form class="form form-inline" ng-submit="add()">
+		<div class="form-group">
+			<select class="form-control"
+					ng-options="color for color in colorOptions"
+					ng-model="newTask.color">
+			</select>
+		</div>
+		<div class="form-group">
+			<input type="text" class="form-control" ng-model="newTask.content">
+		</div>
+		<button type="submit" class="btn btn-default" ng-disabled="newTask.content.length < 5">创建任务</button>
+	</form>
+
+	<h3>待办任务列表：</h3>
+	<ul class="list-group">
+		<li
+			class="list-group-item nga-default nga-stagger nga-slide-right"
+			ng-class="task.color"
+			ng-repeat="task in tasks | filter:{isClose:false}">
+				<label>
+					<input type="checkbox" ng-model="task.isClose">
+					{{task.content}}
+				</label>
+		</li>
+	</ul>
+</div>
+				</textarea>
+			</slide>
+
+
+			<slide class="nga-default nga-stagger nga-fade">
+				<h1>指令 Directive</h1>
+				<p class="text-left">
+					在AngularJs视图模板中提供对HTML进行扩展，每一个指令都为HTML提供了一种新的能力，并且让模板更加语义化。在AngularJs中已经内置了一组指令，它们可以提供：
+					<ul class="text-left">
+						<li>DOM节点的控制（ng-show, ng-hide, ng-if，ng-include, ...)</li>
+						<li>渲染、循环数据（ng-bind, ng-repeat, ...）</li>
+						<li>执行数据绑定（ng-model, ng-options, ...）</li>
+						<li>关联控制器（ng-controller）</li>
+						<li>其它...</li>
+					</ul>
+				</p>
+			</slide>
+
+			<slide class="nga-default nga-stagger nga-fade">
+				<h1>控制器 Controller</h1>
+				<p>管理一块视图区域，为视图模板提供访问服务层的一个接口。</p>
+			</slide>
+			<slide class="nga-default nga-stagger nga-fade">
+				<textarea ui-codemirror="jsEditorOptions">
+angular
+	.module('app', [])
+	.controller('demoCtrl', ['$scope', 'taskManager',
+		function DemoCtrl($scope, taskManager) {
+		    $scope.colorOptions = taskManager.colorOptions();
+		    $scope.tasks        = taskManager.tasks();
+		    $scope.add          = addTask;
+		    $scope.newTask      = {
+		        color: $scope.colorOptions[0],
+		        content: ''
+		    };
+
+		    function addTask() {
+		        taskManager.addTask(
+					angular.copy($scope.newTask)
+				);
+		        $scope.newTask.content = '';
+		    }
+}]);
+				</textarea>
+			</slide>
+
+			<slide class="nga-default nga-stagger nga-fade">
+				<h1>依赖注入 DI</h1>
+				<p>依赖注入是一种软件设计模式，用来处理代码的依赖关系，而不用关心被依赖对象的来源以及如何创建一个被依赖的服务。</p>
+				<p>推断 <small>.controller(‘mainCtrl’, function($scope) { … });</small></p>
+				<p>内嵌 <small>controller(‘mainCtrl’, [‘$scope’, function($scope){ … }]);</small></p>
+				<p>标记 <small>MainCtrl.$inject = [‘$scope’]; function MainCtrl($scope) { … }</small></p>
+				<p>gulp插件 <small>/* @ngInejct */function MainCtrl($scope) { … }</small></p>
+			</slide>
+
+			<slide class="nga-default nga-stagger nga-fade">
+				<h1>服务</h1>
+				<p>封装业务逻辑的运算以及与服务端通信获取、存储数据等</p>
+				<h2>$http + $q 实现页面初始化引导</h2>
+				<p>假设一个页面在显示前需要调用多个服务接口获取数据，在所有接口返回前只能显示一个loading提示不能进入页面。</p>
+			</slide>
+
+			<slide class="nga-default nga-stagger nga-fade">
+<textarea ui-codemirror="jsEditorOptions">
+var aIsOk = bIsOk = cIsOk = false;
+
+$.ajax().callback(function() {
+	aIsOk = true; checkLoading(); });
+$.ajax().callback(function() {
+	bIsOk = true; checkLoading(); });
+$.ajax().callback(function() {
+	cIsOkd = true; checkLoading(); });
+
+function(checkLoading() {
+	if(aIsOk && bIsOk && cIsOk) {
+		$('#loading').remove();
+		$('#main').show();
+	}
+})
+</textarea>
+			</slide>
+
+			<slide class="nga-default nga-stagger nga-fade">
+<textarea ui-codemirror="jsEditorOptions">
+$scope.isLoading = true;
+var aPromise = $http(aRequestConfig);
+var bPromise = $http(bRequestConfig);
+var cPromise = $http(cRequestConfig);
+
+$q.all([aPromise, bPromise, cPromise]).then(function(datas) {
+	isLoading = false;
+}, function(error) {
+	$scope.isError = true;
+	console.debug(error);
+})
+</textarea>
+			</slide>
+			<slide class="nga-default nga-stagger nga-fade">
+				<h1>谢谢聆听</h1>
+				<div class="row">
+					<div class="col-sm-4">
+						<img src="./image/me.jpg" style="width: 100%">
+					</div>
+					<div class="col-sm-8">
+						<ul>
+							<li><h3>毕强 <small>成都智客科技有限公司，技术总监</small></h3></li>
+							<li><strong>热衷领域：</strong>
+								<span class="label label-info">PHP</span>
+								<span class="label label-info">GoLang</span>
+								<span class="label label-info">Python</span>
+								<span class="label label-info">Javascript</span>
+								<span class="label label-info">NoSQL</span>
+								<span class="label label-info">AngularJS</span>
+								<span class="label label-info">敏捷开发</span>
+								<span class="label label-info">TDD</span>
+								<span class="label label-info">分布式架构</span>
+								<span class="label label-info">让我们生活更美好的所有技术</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</slide>
+		</slides>
+
+		<script src="./node_modules/angular/angular.js"></script>
+		<script src="./node_modules/angular-animate/angular-animate.min.js"></script>
+		<script src="./node_modules/codemirror/lib/codemirror.js"></script>
+		<script src="./node_modules/codemirror/mode/xml/xml.js"></script>
+		<script src="./node_modules/codemirror/mode/javascript/javascript.js"></script>
+		<script src="./node_modules/angular-ui-codemirror/src/ui-codemirror.js"></script>
+		<script src="./bower_components/angular-slidedeck/angular-slidedeck.min.js"></script>
+		<script src="bower_components/qrcode/lib/qrcode.min.js"></script>
+		<script src="bower_components/angular-qr/angular-qr.min.js"></script>
+		<script src="./app.js"></script>
+    </body>
+</html>
